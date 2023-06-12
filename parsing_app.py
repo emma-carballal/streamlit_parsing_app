@@ -2,11 +2,17 @@ import time
 import spacy
 from spacy import displacy
 import streamlit as st
+from streamlit import cache_resource
+
+# Wrap the model loading with streamlit caching
+@st.cache_resource()
+def load_model(model_name):
+    return spacy.load(model_name)
 
 # Loading the models
-nlp_md = spacy.load('de_core_news_md')
-nlp_lg = spacy.load('de_core_news_lg')
-nlp_trf = spacy.load('de_dep_news_trf')
+nlp_md = load_model('de_core_news_md')
+nlp_lg = load_model('de_core_news_lg')
+nlp_trf = load_model('de_dep_news_trf')
 
 pipelines = {"de_core_news_md": nlp_md, "de_core_news_lg": nlp_lg, "de_dep_news_trf": nlp_trf}
 
