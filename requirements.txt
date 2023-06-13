@@ -2,7 +2,7 @@ pip==latest
 spacy==3.4.0
 pydantic==1.9.2
 spacy-transformers==1.1.2
-https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp38-cp38-linux_x86_64.whl
+# https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp38-cp38-linux_x86_64.whl
 -f https://download.pytorch.org/whl/torch_stable.html
 torch==2.0.1+cpu
 urllib3==1.26.15
