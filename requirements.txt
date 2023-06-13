@@ -1,8 +1,8 @@
-pip==23.1.2
+--upgrade pip
 spacy==3.4.0
 pydantic==1.9.2
 spacy-transformers==1.1.2
-torch+cpu==2.0.1
+https://download.pytorch.org/whl/cpu/torch-2.0.1%2Bcpu-cp38-cp38-linux_x86_64.whl
 urllib3==1.26.15
 streamlit==1.23.1
 https://github.com/explosion/spacy-models/releases/download/de_core_news_md-3.4.0/de_core_news_md-3.4.0.tar.gz
