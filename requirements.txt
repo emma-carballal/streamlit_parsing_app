@@ -1,5 +1,5 @@
 streamlit>=1.18.0
-spacy>=3.0.0,<4.0.0
-de_core_news_lg
-de_core_news_md
-de_dep_news_trf
+spacy==3.5.3
+https://github.com/explosion/spacy-models/releases/download/de_core_news_md-3.5.3/de_core_news_md-3.5.3.tar.gz
+https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.5.3/de_core_news_lg-3.5.3.tar.gz
+https://github.com/explosion/spacy-models/releases/download/de_dep_news_trf-3.5.3/de_dep_news_trf-3.5.3.tar.gz
