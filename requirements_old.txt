@@ -1,0 +1,12 @@
+pip==23.1.2
+spacy==3.4.0
+pydantic==1.9.2
+spacy-transformers==1.1.2
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==2.0.1
+urllib3==1.26.15
+streamlit==1.23.1
+https://github.com/explosion/spacy-models/releases/download/de_core_news_md-3.4.0/de_core_news_md-3.4.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/de_core_news_lg-3.4.0/de_core_news_lg-3.4.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/de_dep_news_trf-3.4.0/de_dep_news_trf-3.4.0.tar.gz
+typing_extensions<4.6.0

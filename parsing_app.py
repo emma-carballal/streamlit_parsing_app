@@ -5,7 +5,7 @@ import streamlit as st
 from streamlit import cache_resource
 
 # Wrap the model loading with streamlit caching
-@st.cache_resource()
+@st.cache_resource
 def load_model(model_name):
     return spacy.load(model_name)
 
@@ -38,7 +38,7 @@ Dependency tree and processing time will be displayed.
 st.markdown("---")
 
 # Adding a selectbox for the sentences to the sidebar
-selected_sentence = st.sidebar.selectbox('Select a pre-defined sentence', sentences)
+selected_sentence = st.sidebar.selectbox('Select a sentence', sentences)
 
 # Adding a text input for the sentences to the sidebar
 user_sentence = st.sidebar.text_input('Or type your own sentence')
