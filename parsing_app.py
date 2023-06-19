@@ -11,10 +11,10 @@ def load_model(model_name):
 
 # Loading the models
 nlp_md = load_model('de_core_news_md')
-# nlp_lg = load_model('de_core_news_lg')
+nlp_lg = load_model('de_core_news_lg')
 # nlp_trf = load_model('de_dep_news_trf')
 
-pipelines = {"de_core_news_md": nlp_md}#, "de_core_news_lg": nlp_lg, "de_dep_news_trf": nlp_trf}
+pipelines = {"de_core_news_md": nlp_md}, "de_core_news_lg": nlp_lg}#, "de_dep_news_trf": nlp_trf}
 
 # List of sentences to process
 sentences = ["Ich heisse Pippi Langstrumpf.", "Ich zeichne gern, aber ich spiele nicht gern Computer.", \
