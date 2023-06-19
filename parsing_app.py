@@ -1,4 +1,4 @@
-import time
+# import time
 import spacy
 from spacy import displacy
 import streamlit as st
@@ -11,10 +11,10 @@ def load_model(model_name):
 
 # Loading the models
 nlp_md = load_model('de_core_news_md')
-nlp_lg = load_model('de_core_news_lg')
-nlp_trf = load_model('de_dep_news_trf')
+# nlp_lg = load_model('de_core_news_lg')
+# nlp_trf = load_model('de_dep_news_trf')
 
-pipelines = {"de_core_news_md": nlp_md, "de_core_news_lg": nlp_lg, "de_dep_news_trf": nlp_trf}
+pipelines = {"de_core_news_md": nlp_md}#, "de_core_news_lg": nlp_lg, "de_dep_news_trf": nlp_trf}
 
 # List of sentences to process
 sentences = ["Ich heisse Pippi Langstrumpf.", "Ich zeichne gern, aber ich spiele nicht gern Computer.", \
@@ -48,13 +48,13 @@ sentence_to_analyze = user_sentence if user_sentence.strip() != "" else selected
 
 
 for name, nlp in pipelines.items():
-    start_time = time.time()
+    # start_time = time.time()
     doc = nlp(sentence_to_analyze)
-    end_time = time.time()
-    elapsed_time = end_time - start_time
+    # end_time = time.time()
+    # elapsed_time = end_time - start_time
     svg = displacy.render(doc, style='dep')
 
     st.markdown(f"**Pipeline**: {name}")
-    st.markdown(f"**Elapsed time**: {elapsed_time:.2f} seconds")
+    # st.markdown(f"**Elapsed time**: {elapsed_time:.2f} seconds")
     st.markdown(svg, unsafe_allow_html=True)
     st.markdown("---")  # Adds a separator for readability
