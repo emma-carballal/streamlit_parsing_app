@@ -31,7 +31,7 @@ sentences = ["Ich heisse Pippi Langstrumpf.", "Ich zeichne gern, aber ich spiele
 st.title('spaCy parser comparison (German)')
 st.markdown("""
 Streamlit dashboard to compare the parser of three spaCy pipelines for German:
-```de_core_news_md```, ```de_core_news_lg``` and ```de_dep_news_trf```.
+```de_core_news_md```, ```de_core_news_lg``` ~~and ```de_dep_news_trf```~~.
 Select a sentence from the dropdown menu or input your own sentence in the sidebar.
 Dependency tree and processing time will be displayed.
 """)
