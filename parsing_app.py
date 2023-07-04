@@ -1,17 +1,14 @@
-import torch
 import spacy
 from spacy import displacy
 import streamlit as st
 from streamlit import cache_resource
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
 
 # Wrap the model loading with streamlit caching
 @st.cache_resource
 def load_model(model_name):
-    with torch.no_grad():
-        return spacy.load(model_name)
+    """Load a spaCy model."""
+    return spacy.load(model_name)
 
 
 # Loading the models
