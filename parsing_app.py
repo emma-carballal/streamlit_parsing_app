@@ -2,6 +2,10 @@ import spacy
 from spacy import displacy
 import streamlit as st
 from streamlit import cache_resource
+from spacy.util import use_gpu
+import torch
+
+use_gpu(torch.device('cpu'))
 
 
 # Wrap the model loading with streamlit caching
@@ -19,15 +23,15 @@ nlp_trf = load_model('de_dep_news_trf')
 pipelines = {"de_core_news_md": nlp_md, "de_core_news_lg": nlp_lg, "de_dep_news_trf": nlp_trf}
 
 # List of sentences to process
-sentences = ["Ich heisse Pippi Langstrumpf.", "Ich zeichne gern, aber ich spiele nicht gern Computer.", \
-'Ich mag Schokolade, aber Spaghetti und Banane mag ich nicht.', 'Ist dieser Platz noch frei?',
-'Darf ich mal durch?', 'Wie spät ist es?', 'Ich habe mich verlaufen.', 'Können Sie mir bitte sagen, wie ich zum Bahnhof komme?', \
-'Wie viel kostet ein Ticket bis nach Hamburg?', 'Können Sie mir bitte helfen?', \
-'Ich habe mein Portemonnaie verloren.', 'Das habe ich akustisch nicht verstanden.', \
-'Wann hast du morgen Zeit?', 'Können wir das auf morgen verschieben?', 'Ich bin im Stress.', \
-'Ich bin gestresst.', 'Ich habe keine Zeit.', 'Das wird schon klappen!', 'Störe ich gerade?', \
-'Bitte warten Sie einen Moment.', 'Einen Moment bitte.', 'Was hast du heute vor?', 'Ich melde mich.', \
-'Es ist ganz schön kalt hier.']
+sentences = ["Ich heisse Pippi Langstrumpf.", "Ich zeichne gern, aber ich spiele nicht gern Computer.",
+                'Ich mag Schokolade, aber Spaghetti und Banane mag ich nicht.', 'Ist dieser Platz noch frei?',
+                'Darf ich mal durch?', 'Wie spät ist es?', 'Ich habe mich verlaufen.', 'Können Sie mir bitte sagen, wie ich zum Bahnhof komme?',
+                'Wie viel kostet ein Ticket bis nach Hamburg?', 'Können Sie mir bitte helfen?',
+                'Ich habe mein Portemonnaie verloren.', 'Das habe ich akustisch nicht verstanden.',
+                'Wann hast du morgen Zeit?', 'Können wir das auf morgen verschieben?', 'Ich bin im Stress.',
+                'Ich bin gestresst.', 'Ich habe keine Zeit.', 'Das wird schon klappen!', 'Störe ich gerade?',
+                'Bitte warten Sie einen Moment.', 'Einen Moment bitte.', 'Was hast du heute vor?', 'Ich melde mich.',
+                'Es ist ganz schön kalt hier.']
 
 # Adding a title and some explanations
 st.title('spaCy parser comparison (German)')
